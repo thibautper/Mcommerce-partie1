@@ -1,0 +1,183 @@
+{
+	"id": "c0b92e8a-7772-45ef-8768-6316716a784c",
+	"name": "Partie 4 - Test des méthodes créées",
+	"allTests": [],
+	"timestamp": "2018-12-12T19:45:34.961Z",
+	"collection_id": "969fbf91-a67a-4163-b3a4-9702aa6164db",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "0",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "969fbf91-a67a-4163-b3a4-9702aa6164db",
+		"name": "Partie 4 - Test des méthodes créées",
+		"description": "",
+		"auth": null,
+		"events": [
+			{
+				"listen": "prerequest",
+				"script": {
+					"id": "fd929221-de9f-41a2-8a33-f6470c97ee39",
+					"type": "text/javascript",
+					"exec": [
+						""
+					]
+				}
+			},
+			{
+				"listen": "test",
+				"script": {
+					"id": "96706806-aac3-44c3-97fc-eefefb1be025",
+					"type": "text/javascript",
+					"exec": [
+						""
+					]
+				}
+			}
+		],
+		"variables": [],
+		"order": [
+			"105c1474-dd49-4339-b962-b466ecd52236",
+			"0ac159c5-8793-4941-afc8-b98550226d50",
+			"758d1ddf-e9a9-438f-bdda-2db10b2a7234"
+		],
+		"folders_order": [],
+		"owner": "0",
+		"permissions": {},
+		"favorite": false,
+		"shared": false,
+		"type": "collection",
+		"depth": 0
+	},
+	"folder": null,
+	"environment": null,
+	"globals": null,
+	"results": [
+		{
+			"name": "Test Partie 1",
+			"id": "105c1474-dd49-4339-b962-b466ecd52236",
+			"url": "http://localhost:9090/AdminProduits",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {},
+			"times": [
+				"38"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "38",
+			"totalRequestTime": "38",
+			"iterationResults": {}
+		},
+		{
+			"name": "Test Partie 2",
+			"id": "0ac159c5-8793-4941-afc8-b98550226d50",
+			"url": "http://localhost:9090/ListeTrieeParOrdreAlphabetique",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {},
+			"times": [
+				"16"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "16",
+			"totalRequestTime": "16",
+			"iterationResults": {}
+		},
+		{
+			"name": "Test Partie 3",
+			"id": "758d1ddf-e9a9-438f-bdda-2db10b2a7234",
+			"url": "http://localhost:9090/Produits/?nom=test&prix=0",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 412,
+				"name": "Precondition Failed",
+				"detail": {
+					"name": "Precondition Failed",
+					"detail": "The server does not meet one of the preconditions that the requester put on the request."
+				}
+			},
+			"testPassFailCounts": {},
+			"times": [
+				"14"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "14",
+			"totalRequestTime": "14",
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 0,
+	"totalFail": 0,
+	"totalTime": 68,
+	"lifecycle": "done",
+	"requests": [
+		{
+			"name": "Test Partie 1",
+			"id": "105c1474-dd49-4339-b962-b466ecd52236",
+			"url": "http://localhost:9090/AdminProduits",
+			"time": "2018-12-12T19:45:34.961Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "Test Partie 2",
+			"id": "0ac159c5-8793-4941-afc8-b98550226d50",
+			"url": "http://localhost:9090/ListeTrieeParOrdreAlphabetique",
+			"time": "2018-12-12T19:45:34.961Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "Test Partie 3",
+			"id": "758d1ddf-e9a9-438f-bdda-2db10b2a7234",
+			"url": "http://localhost:9090/Produits/?nom=test&prix=0",
+			"time": "2018-12-12T19:45:34.961Z",
+			"responseCode": {
+				"code": 412,
+				"name": "Precondition Failed",
+				"detail": {
+					"name": "Precondition Failed",
+					"detail": "The server does not meet one of the preconditions that the requester put on the request."
+				}
+			},
+			"testPassFailCounts": {}
+		}
+	],
+	"synced": false
+}
