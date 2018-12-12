@@ -19,7 +19,7 @@ import java.net.URI;
 import java.util.List;
 
 
-@Api( description="API pour es opérations CRUD sur les produits.")
+@Api( description="API pour les opérations CRUD sur les produits.")
 
 @RestController
 public class ProductController {
@@ -36,7 +36,7 @@ public class ProductController {
 
         Iterable<Product> produits = productDao.findAll();
 
-        SimpleBeanPropertyFilter monFiltre = SimpleBeanPropertyFilter.serializeAllExcept("prixAchat");
+        SimpleBeanPropertyFilter monFiltre = SimpleBeanPropertyFilter.serializeAllExcept("prixAchat","marge");
 
         FilterProvider listDeNosFiltres = new SimpleFilterProvider().addFilter("monFiltreDynamique", monFiltre);
 
@@ -45,6 +45,39 @@ public class ProductController {
         produitsFiltres.setFilters(listDeNosFiltres);
 
         return produitsFiltres;
+    }
+
+
+
+    //Liste les produits et calcul de marge pour chaque produit / Partie 1 - Affichage de la marge
+
+    @RequestMapping(value = "/AdminProduits", method = RequestMethod.GET)
+
+    public MappingJacksonValue margeProduits() {
+
+        Iterable<Product> produits = productDao.calculerMargeProduit();
+
+        SimpleBeanPropertyFilter monFiltre = SimpleBeanPropertyFilter.serializeAllExcept("prixAchat");
+
+        FilterProvider listDeNosFiltres = new SimpleFilterProvider().addFilter("monFiltreDynamique", monFiltre);
+
+        MappingJacksonValue produitsFiltres = new MappingJacksonValue(produits);
+
+        produitsFiltres.setFilters(listDeNosFiltres);
+/*
+ Autre façon de faire sans modifier DAO
+ import java.util.Map;
+import java.util.stream.Collectors;
+...
+        List<Product> produits = productDao.findAll();
+        Map<Product,Integer> map  = produits.stream().collect(Collectors.toMap(x -> x , x -> x.getPrix() - x.getPrixAchat()));
+        return new MappingJacksonValue(map);
+*/       
+        
+        return produitsFiltres;
+        
+
+ 
     }
 
 

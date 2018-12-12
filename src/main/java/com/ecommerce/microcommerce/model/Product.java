@@ -6,10 +6,11 @@ import org.hibernate.validator.constraints.Length;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 import javax.validation.constraints.Min;
 
 @Entity
-//@JsonFilter("monFiltreDynamique")
+@JsonFilter("monFiltreDynamique")
 public class Product {
 
     @Id
@@ -24,7 +25,8 @@ public class Product {
 
     //information que nous ne souhaitons pas exposer
     private int prixAchat;
-
+    
+   
     //constructeur par défaut
     public Product() {
     }
@@ -65,9 +67,10 @@ public class Product {
         return prixAchat;
     }
 
+
     public void setPrixAchat(int prixAchat) {
         this.prixAchat = prixAchat;
-    }
+     }
 
     @Override
     public String toString() {
